@@ -7,7 +7,6 @@ import spring.security.studying.globalsecurity.model.Product;
 import spring.security.studying.globalsecurity.service.ProductService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -24,5 +23,10 @@ public class ProductController {
         products.add(new Product("book", "marina"));
 
         return productService.sellProducts(products);
+    }
+
+    @GetMapping("/find")
+    public List<Product> findProducts() {
+        return productService.findProducts();
     }
 }
